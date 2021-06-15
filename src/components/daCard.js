@@ -3,11 +3,11 @@ import React from "react";
 
 function FriendCard(props) {
   return (
-    <div className="card">
+    <div className="card bg-primary testing" style={{backgroundColor: '#f1f1f1'}}>
       <div className="img-container">
         <img alt={props.name} src={props.image} />
       </div>
-      <div className="content">
+      <div className="content test">
         <ul>
           <li>
             <strong>Repository:</strong> {props.name}

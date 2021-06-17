@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
+import { getTickets } from "../services/list";
 
 const Chart1 = () => {
   const [chartData, setChartData] = useState({});
@@ -8,14 +9,11 @@ const Chart1 = () => {
 
   const chart = () => {
     let age1 = [];
-  let registeredAge1 =[];
+    let registeredAge1 = [];
 
-    fetch("https://randomuser.me/api/?results=10&nat=us")
-      .then((res) => res.json())
+    getTickets()
       .then((res) => {
         for (let dataObj of res.results) {
-          console.log("Age: " + dataObj.dob.age);
-          console.log("RegAge: " + dataObj.registered.age);
           age1.push(parseInt(dataObj.dob.age));
           registeredAge1.push(parseInt(dataObj.registered.age));
         }
@@ -26,27 +24,25 @@ const Chart1 = () => {
               label: "Hotfix data...",
               data: registeredAge1,
               backgroundColor: ["rgba(75, 192, 192, 0.6)"],
-              borderWidth: 4
-            }
-          ]
+              borderWidth: 4,
+            },
+          ],
         });
       })
       .catch((err) => {
         console.log(err);
-      }); 
+      });
     console.log(age1, registeredAge1);
-        };
+  };
 
   useEffect(() => {
     chart();
   }, []);
 
-      return (
-          <div>
-            <Line
-              data={chartData}
-            />
-          </div>
+  return (
+    <div>
+      <Line data={chartData} />
+    </div>
   );
 };
 export default Chart1;

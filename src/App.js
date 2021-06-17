@@ -1,9 +1,9 @@
-import logo from './logo.svg';
-import { Row, Col } from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './app.css';
-import FriendCard from './components/daCard';
-import Head from './components/header'
+import logo from "./logo.svg";
+import { Row, Col } from "reactstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./app.css";
+import FriendCard from "./components/daCard";
+import Head from "./components/header";
 
 function App() {
   return (

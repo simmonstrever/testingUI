@@ -1,0 +1,19 @@
+{
+    "list":{
+    "newTicket": 8,
+    "devComplete": 0,
+    "qaInstalled": 7,
+    "qaApproved": 9,
+    "qaDenied": 6,
+    "completed": 0,
+    "inProgress": 5,
+    "backlog": 3,
+    "liveRelease": 7,
+    "readyForReview": 0,
+    "inDev": 9,
+    "needsToBePrioritized": 7,
+    "qaVerificationNeeded": 9,
+    "closed": 7
+    }
+  }
+  
